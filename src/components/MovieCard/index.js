@@ -6,7 +6,7 @@ import Rating from "../Rating";
 
 const MovieCard = ({ movie: { title, poster_path, vote_average } }) => {
   return (
-    <CardStyled data-testid="movie">
+    <CardStyled>
       <CardMediaStyled
         image={`https://image.tmdb.org/t/p/w500/${poster_path}`}
         title={title}
