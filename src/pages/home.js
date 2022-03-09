@@ -15,7 +15,7 @@ const Home = () => {
   const handleChange = (e, value) => {
     setPage(value);
   };
-  //TODO: Virtualized list
+
   return (
     <>
       {isFetching && <LinearProgress color="secondary" />}
@@ -25,7 +25,7 @@ const Home = () => {
         </Box>
 
         <Grid container spacing={3}>
-          {data?.results?.map((result) => (
+          {data?.results?.map(result => (
             <Grid item xs={6} md={3} lg={2} key={result.id}>
               <MovieCard movie={result} />
             </Grid>
