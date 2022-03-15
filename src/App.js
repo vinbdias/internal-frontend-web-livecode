@@ -3,7 +3,6 @@ import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "./theme";
 import Routes from "./routes";
 import TopBar from "./components/TopBar";
-import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -11,7 +10,6 @@ function App() {
       <BrowserRouter>
         <TopBar />
         <Routes />
-        <Footer />
       </BrowserRouter>
     </ThemeProvider>
   );
