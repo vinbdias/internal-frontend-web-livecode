@@ -13,13 +13,12 @@ import MovieCard from "../components/MovieCard";
 const Home = () => {
   const [page, setPage] = useState(1);
   const [isFetching, setIsFetching] = useState(false);
+  let data = [];
 
-  const [data, setData] = useState([]);
-
-  const fetchPopular = async (page) => {
+  const fetchPopular = async page => {
     setIsFetching(true);
     const response = await api.get(`/movie/popular?page=${page}`);
-    setData(response.data);
+    data = response;
     setIsFetching(false);
   };
 
@@ -39,13 +38,9 @@ const Home = () => {
           <LinearProgress color="secondary" />
         ) : (
           <Grid container spacing={3}>
-            {data?.results?.map((result) => (
+            {data?.results?.map(result => (
               <Grid item xs={6} md={3} lg={2} key={result.id}>
-                <MovieCard
-                  title={result.title}
-                  url={result.poster_path}
-                  vote_average={result.vote_average}
-                />
+                <MovieCard title={result.title} url={result.poster_path} />
               </Grid>
             ))}
           </Grid>

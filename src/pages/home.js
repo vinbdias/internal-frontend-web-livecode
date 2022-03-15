@@ -2,6 +2,7 @@ import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import { acordionData } from "../core/data/home";
+import Link from "@material-ui/core/Link";
 
 import Button from "../components/Buttons/Button";
 import Acordion from "../components/Buttons/Acordion";
@@ -33,7 +34,13 @@ const Home = () => {
                 alignItems="center"
                 flexDirection="column"
               >
-                <Typography align="justify">{item.description}</Typography>
+                <Typography align="justify">
+                  {item.description}{" "}
+                  <Link target="_blank" href={item.url.link}>
+                    <b>{item.url.text}</b>
+                  </Link>
+                </Typography>
+
                 <Button href={item.route}>Iniciar</Button>
               </Box>
             </Acordion>
