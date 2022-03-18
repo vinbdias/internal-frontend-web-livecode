@@ -10,7 +10,7 @@ import Footer from "../components/Footer";
 import api from "../services/api";
 import MovieCard from "../components/MovieCard";
 
-const Home = () => {
+const Challenge1 = () => {
   const [page, setPage] = useState(1);
   const [isFetching, setIsFetching] = useState(false);
   let data = [];
@@ -59,4 +59,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Challenge1;

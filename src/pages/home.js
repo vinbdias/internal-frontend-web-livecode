@@ -9,7 +9,7 @@ import Acordion from "../components/Buttons/Acordion";
 
 const Home = () => {
   return (
-    <Container maxWidth="xl" justifyContent="center">
+    <Container maxWidth="xl">
       <Box
         minHeight="80vh"
         display="flex"
@@ -26,7 +26,7 @@ const Home = () => {
           flexDirection="column"
         >
           {acordionData.map((item, index) => (
-            <Acordion title={item.title}>
+            <Acordion key={index} title={item.title}>
               <Box
                 minWidth="400px"
                 display="flex"
